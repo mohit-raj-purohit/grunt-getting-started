@@ -2,7 +2,9 @@
 
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
-// Source : https://scotch.io/tutorials/a-simple-guide-to-getting-started-with-grunt#grunt-setup-and-configuration
+// Source :
+// 1. https://scotch.io/tutorials/a-simple-guide-to-getting-started-with-grunt#grunt-setup-and-configuration
+// 2. http://gruntjs.com/configuring-tasks
 module.exports = function(grunt) {
 
     // ===========================================================================
@@ -56,6 +58,14 @@ module.exports = function(grunt) {
             }
         },
 
+        obfuscator: {
+            files: "src/**/*.js",
+            entry: 'src/js/magic.js',
+            out: 'dist/js/obfuscated.js',
+            strings: true,
+            root: __dirname
+        },
+
         // configure watch to auto update ----------------
         watch: {
 
@@ -87,5 +97,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-obfuscator');
 
 };
