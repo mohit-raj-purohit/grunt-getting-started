@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         obfuscator: {
             files: "app/src/**/*.js",
             entry: 'app/src/js/magic.js',
-            out: 'dist/js/obfuscated.js',
+            out: 'app/src/js/obfuscated.js',
             strings: true,
             root: __dirname
         },
