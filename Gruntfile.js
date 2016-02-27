@@ -24,17 +24,18 @@ module.exports = function(grunt) {
             },
 
             // when this task is run, lint the Gruntfile and all js files in src
-            build: ['Gruntfile.js', 'src/**/*.js']
+            build: ['Gruntfile.js', 'app/src/**/*.js']
         },
         //
         // // configure uglify to minify js files -------------------------------------
         uglify: {
             options: {
-                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+                report: 'gzip'
             },
             my_target: {
                 files: {
-                    'dist/js/magic.min.js': 'src/**/*.js'
+                    'dist/js/magic.min.js': 'app/src/**/*.js'
                 }
             }
         },
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 files: {
-                    'dist/css/pretty.css': 'src/css/pretty.less'
+                    'dist/css/pretty.css': 'app/src/css/pretty.less'
                 }
             }
         },
@@ -53,14 +54,14 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'dist/css/style.min.css': 'src/css/style.css'
+                    'dist/css/style.min.css': 'app/src/css/style.css'
                 }
             }
         },
 
         obfuscator: {
-            files: "src/**/*.js",
-            entry: 'src/js/magic.js',
+            files: "app/src/**/*.js",
+            entry: 'app/src/js/magic.js',
             out: 'dist/js/obfuscated.js',
             strings: true,
             root: __dirname
@@ -76,13 +77,13 @@ module.exports = function(grunt) {
             // for stylesheets, watch css and less files
             // only run less and cssmin
             stylesheets: {
-                files: ['src/css/*.css', 'src/css/*.less'],
+                files: ['app/src/css/*.css', 'app/src/css/*.less'],
                 tasks: ['less', 'cssmin']
             },
 
             // for scripts, run jshint and uglify
             scripts: {
-                files: 'src/**/*.js',
+                files: 'app/src/**/*.js',
                 tasks: ['jshint', 'uglify']
             }
         },
