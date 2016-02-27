@@ -1,0 +1,20 @@
+/* src/css/pretty.less */
+body {
+  background: #CC594A;
+  color: #B8CC24;
+}
+button {
+  background: #8BC5FF;
+}
+div {
+  background: #6F3596;
+}
+h1 {
+  color: #CC594A;
+}
+h1 span {
+  display: block;
+}
+h1 .abc {
+  color: #8BC5FF;
+}
