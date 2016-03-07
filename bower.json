@@ -1,0 +1,12 @@
+{
+  "name": "grunt-getting-started",
+  "description": "Starting with Bower",
+  "authors": [
+    "Mohit Raj Purohit <mohit.raj.purohit@optimusinfo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mohitr-optimus/grunt-getting-started",
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

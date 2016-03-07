@@ -87,6 +87,22 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'uglify']
             }
         },
+        // bower_concat:{
+        //     all: {
+        //         dest: 'app/src/js/bower.js',
+        //         cssDest: 'app/src/css/bower.css',
+        //         // exclude: [
+        //         //     'bootstrap/fonts',
+        //         //     'bootstrap/grunt',
+        //         //     'bootstrap/js',
+        //         //     'bootstrap/less',
+        //         //     'bootstrap/grunt'
+        //         // ],
+        //         bowerOptions: {
+        //             relative: false
+        //         }
+        //     }
+        // },
         connect: {
             server: {
                 options: {
@@ -109,6 +125,7 @@ module.exports = function(grunt) {
     });
 
     // ============= // CREATE TASKS ========== //
+    // grunt.registerTask('preview', ['connect', 'bower_concat', 'watch']);
     grunt.registerTask('preview', ['connect', 'watch']);
 
     // Remove build directory contents
@@ -130,7 +147,8 @@ module.exports = function(grunt) {
         'grunt-contrib-cssmin',
         'grunt-contrib-watch',
         'grunt-obfuscator',
-        'grunt-contrib-connect'
+        'grunt-contrib-connect',
+        'grunt-bower-concat'
     ];
 
     npmTasks.forEach(function(taskName) {
